@@ -1,0 +1,18 @@
+﻿@model AspNetMVCStartupProject.Models.TestViewModel
+
+@{
+    ViewBag.Title = "Test";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Title</h2>
+<p>@Model.Message</p>
+
+@if (Model.TestList != null && Model.TestList.Count > 0)
+{
+    <ul>
+        @foreach(var item in Model.TestList) {
+            <li><p>@item.id</p><p>@item.name</p></li>
+        }
+    </ul>
+}
